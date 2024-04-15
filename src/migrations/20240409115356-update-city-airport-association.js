@@ -12,7 +12,7 @@ module.exports = {
         field:'id'
       },
       onUpdate:'CASCADE',
-      onDELETE:'CASCADE'
+      onDelete:'CASCADE'
     })
   },
 
@@ -20,3 +20,9 @@ module.exports = {
     await queryInterface.removeConstraint('Airports','city_fkey_constraint_name');
   }
 };
+
+/**
+ * sql command to check association's
+ * 
+ * select * from INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = "airports";
+ */
