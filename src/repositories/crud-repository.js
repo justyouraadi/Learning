@@ -26,6 +26,10 @@ class CrudRepository{
     async get(data) {
             const response = await this.model.findByPk(data);
             if(!response){
+                console.log("heelu")
+            }
+            // console.log("in crud-repo ",response)
+            if(!response || response==null){
                 throw new AppError('Not able to find the resource',StatusCodes.NOT_FOUND)
             }
             return response;
@@ -43,6 +47,9 @@ class CrudRepository{
                     id:id
                 }
             })
+            if(!response){
+                throw new AppError('Not able to find the resource',StatusCodes.NOT_FOUND)
+            }
             return response;
     }
 }

@@ -34,8 +34,8 @@ async function getAirplane(id){
         const airplane = await airplaneRepository.get(id);
         return airplane;
     } catch (error) {
-        if(error.StatusCode==StatusCodes.NOT_FOUND){
-            throw new AppError('The airplane you requested is not present',error.StatusCode)
+        if(error.statusCode==StatusCodes.NOT_FOUND){
+            throw new AppError('The airplane you requested is not present',error.statusCode)
         }
         throw new AppError('Connot fetch data of the airplane',StatusCodes.INTERNAL_SERVER_ERROR)
     }
@@ -46,8 +46,8 @@ async function destroyAirplane(id){
         const airplane = await airplaneRepository.destroy(id);
         return airplane;
     }catch(error){
-        if(error.StatusCode==StatusCodes.NOT_FOUND){
-            throw new AppError('The airplane you requested is not present',error.StatusCode)
+        if(error.statusCode==StatusCodes.NOT_FOUND){
+            throw new AppError('The airplane you requested is not present',error.statusCode)
         }
         throw new AppError('Connot fetch data of the airplane',StatusCodes.INTERNAL_SERVER_ERROR)
     }
