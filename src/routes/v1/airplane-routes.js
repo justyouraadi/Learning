@@ -15,12 +15,12 @@ router
     .get('/',
     AirplaneController.getAirplanes);
 
-// /api/v1/airplane/:id POST
+// /api/v1/airplanes/:id POST
 router
     .post('/:id',
     AirplaneController.getAirplane);
 
-// /api/v1/airplane/:id DELETE
+// /api/v1/airplanes/:id DELETE
 router
     .delete('/:id',
     AirplaneController.destroyAirplane);
